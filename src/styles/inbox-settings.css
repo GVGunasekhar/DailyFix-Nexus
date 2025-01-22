@@ -1,0 +1,101 @@
+.inbox-settings {
+  position: relative;
+  display: inline-block;
+}
+
+.inbox-settings .settings-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s;
+  color: #666;
+}
+
+.inbox-settings .settings-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+.inbox-settings .settings-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  min-width: 250px;
+  z-index: 1000;
+  animation: slideIn 0.2s ease-out;
+}
+
+.inbox-settings .settings-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.inbox-settings .settings-item:hover {
+  background: #f5f5f5;
+}
+
+.inbox-settings .settings-icon {
+  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inbox-settings .settings-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .inbox-settings .settings-dropdown {
+    background: #2c2c2c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .inbox-settings .settings-item:hover {
+    background: #3c3c3c;
+  }
+
+  .inbox-settings .settings-label {
+    color: #ffffff;
+  }
+
+  .inbox-settings .settings-button {
+    color: #aaa;
+  }
+
+  .inbox-settings .settings-button:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .inbox-settings .settings-dropdown {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 12px 12px 0 0;
+    min-width: 100%;
+  }
+} 

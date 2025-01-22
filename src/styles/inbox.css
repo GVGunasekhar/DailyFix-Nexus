@@ -1,0 +1,664 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.menu-button, .refresh-button, .notifications-button, .profile-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.menu-button:hover, .refresh-button:hover, .notifications-button:hover, .profile-button:hover {
+  background-color: #f5f5f5;
+}
+
+.app-nav {
+  display: flex;
+  gap: 24px;
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-link {
+  padding: 12px 0;
+  color: #666;
+  text-decoration: none;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link:hover {
+  color: #007AFF;
+}
+
+.nav-link.active {
+  color: #007AFF;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #007AFF;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.inbox-container {
+  width: 360px;
+  border-right: 1px solid #eee;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.conversation-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 16px;
+}
+
+.inbox-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.inbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.inbox-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.message-list {
+  margin-top: 20px;
+}
+
+.conversation-item {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.conversation-item:hover {
+  background-color: #f5f5f5;
+}
+
+.conversation-content {
+  margin-left: 15px;
+  flex: 1;
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conversation-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.last-message {
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.unread-badge {
+  background-color: #007AFF;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.platform-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.search-bar {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-icon {
+  font-size: 16px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  background-color: #007AFF;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.platform-badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.platform-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.platform-slack {
+  background-color: #4A154B;
+  color: white;
+}
+
+.platform-matrix {
+  background-color: #000000;
+  color: white;
+}
+
+.platform-email {
+  background-color: #EA4335;
+  color: white;
+}
+
+/* Add styles for the coming soon badge */
+.coming-soon-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  background-color: #f0f0f0;
+  color: #666;
+  border-radius: 10px;
+  margin-left: 4px;
+}
+
+/* Add these new styles */
+.priority-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.priority-badge.high {
+  background: #FFE5E5;
+  color: #DC3545;
+}
+
+.priority-badge.medium {
+  background: #FFF3E0;
+  color: #F57C00;
+}
+
+.priority-badge.low {
+  background: #E8F5E9;
+  color: #388E3C;
+}
+
+/* Priority message backgrounds */
+.message-item.priority-high {
+  border-left: 3px solid #DC3545;
+}
+
+.message-item.priority-medium {
+  border-left: 3px solid #F57C00;
+}
+
+.message-item.priority-low {
+  border-left: 3px solid #388E3C;
+}
+
+/* Platform badges */
+.platform-badges {
+  display: flex;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.platform-badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.platform-badge.whatsapp {
+  background: #DCF8C6;
+  color: #075E54;
+}
+
+.platform-badge.slack {
+  background: #ECE7F4;
+  color: #4A154B;
+}
+
+.platform-badge.email {
+  background: #E3F2FD;
+  color: #1976D2;
+}
+
+.platform-badge.matrix {
+  background: #F5E6FF;
+  color: #9C27B0;
+}
+
+.context-tag {
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  margin-right: 4px;
+}
+
+.ai-features {
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
+.suggested-replies {
+  margin-bottom: 20px;
+}
+
+.suggestions-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.suggestion-button {
+  background-color: #f5f5f5;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.suggestion-button:hover {
+  background-color: #e5e5e5;
+}
+
+.ai-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ai-action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.conversation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+/* Add these new styles for conversation view */
+.conversation-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #eee;
+}
+
+.conversation-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info h2 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.conversation-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.conversation-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.messages-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  font-size: 14px;
+}
+
+.message-input-container {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 12px;
+}
+
+.message-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.send-button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Update conversation item styles */
+.conversation-item-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Add message history styles */
+.message-history {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.message {
+  display: flex;
+  max-width: 70%;
+}
+
+.message-sent {
+  margin-left: auto;
+}
+
+.message-received {
+  margin-right: auto;
+}
+
+.message-content {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.message-sent .message-content {
+  background-color: #007AFF;
+  color: white;
+}
+
+.message-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.message-sent .message-meta {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.message-platform {
+  font-weight: 500;
+}
+
+.conversation-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.message-item {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.message-item:hover {
+  background-color: #F8F9FA;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.message-item:active {
+  background-color: #F0F2F5;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.sender-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #0066CC;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sender-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.sender-details h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #14171A;
+}
+
+.message-time {
+  color: #666;
+  font-size: 14px;
+}
+
+.message-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.new-badge {
+  background: #34C759;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.message-content {
+  margin: 0 0 12px 0;
+  color: #2C3E50;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.platform-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.platform-badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.platform-badge[data-platform="WhatsApp"] {
+  background: #DCF8C6;
+  color: #075E54;
+}
+
+.platform-badge[data-platform="Slack"] {
+  background: #ECE7F4;
+  color: #4A154B;
+}
+
+.platform-badge[data-platform="Email"] {
+  background: #E3F2FD;
+  color: #1976D2;
+}
+
+.platform-badge[data-platform="Matrix"] {
+  background: #F5E6FF;
+  color: #9C27B0;
+}
+
+/* Header actions */
+.header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.priority-filter {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+} 
