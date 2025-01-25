@@ -106,11 +106,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - React team for the amazing framework
 - Netlify for hosting
-- All contributors who helped with the project
-
+- All contributors who helped with theproject
+- t
 ## 📞 Contact
 
 - VENKATA GUNASEKHAR GORRE 
 - Email Link:sekharg601@gmail.com
-- Project Link: [https://github.com/your-username/dailyfix-nexus](https://github.com/GVGunasekhar/DailyFix-Nexus)
+- Project Link: [https://github.com/GVGunasekhar/dailyfix-nexus](https://github.com/GVGunasekhar/DailyFix-Nexus)
 - Live Link:https://dailyfix-nexus.netlify.app/
