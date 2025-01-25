@@ -1,5 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Inbox } from './components/Inbox';
+import NotFound from './pages/404';
 import './styles/inbox.css';
 import './styles/dashboard.css';
 import './styles/report.css';
@@ -42,12 +44,13 @@ body {
 
 const App: React.FC = () => {
   return (
-    <>
+    <Router>
       <style>{globalStyles}</style>
-      <div className="app">
-        <Inbox />
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Inbox />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 };
 
